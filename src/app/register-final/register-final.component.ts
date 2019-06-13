@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 function comparePassword(c: AbstractControl) {
   const v = c.value;
   return (v.password === v.confirmPassword) ? null : {
@@ -28,7 +29,6 @@ export class RegisterFinalComponent implements OnInit {
       phone: ['', [Validators.required, Validators.pattern(/^\+84\d{9,10}$/)]]
     });
 
-    // update form state
     this.registerForm.patchValue({
       email: 'info@example.com'
     });

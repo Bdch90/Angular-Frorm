@@ -15,9 +15,12 @@ let id1 = 1;
 export class TodoComponent implements OnInit {
   userInput = new FormControl();
   todos: Array<ITodo> = [];
+
   constructor() { }
+
   ngOnInit() {
   }
+
   onChange() {
     const { value } = this.userInput;
     if (value) {
@@ -30,6 +33,7 @@ export class TodoComponent implements OnInit {
       this.userInput.setValue('');
     }
   }
+
   toggleTodo(i) {
     this.todos[i].complete = !this.todos[i].complete;
   }
